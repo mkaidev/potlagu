@@ -1,10 +1,11 @@
-import { UserButton } from "@clerk/nextjs";
+import Header from "@/components/Header";
+import { db } from "@/lib/db";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <div>
-      <UserButton />
+    <>
+      <Header className="bg-neutral-900" />
       Home
-    </div>
+    </>
   );
 }

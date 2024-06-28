@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
+import { Toaster } from "sonner";
 
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -11,7 +12,7 @@ import { InitialProfile } from "@/lib/InitialProfile";
 const font = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Pot Lagu App",
+  title: "Spotlagu App",
   description: "Emejing lagu app",
   icons: {
     icon: "/favicon.ico",
@@ -36,6 +37,7 @@ export default async function RootLayout({
             storageKey="potLaguTheme"
           >
             {children}
+            <Toaster />
           </ThemeProvider>
         </body>
       </html>

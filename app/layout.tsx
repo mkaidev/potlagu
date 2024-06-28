@@ -6,6 +6,7 @@ import { dark } from "@clerk/themes";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
+import { InitialProfile } from "@/lib/InitialProfile";
 
 const font = Figtree({ subsets: ["latin"] });
 
@@ -17,11 +18,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  await InitialProfile();
+
   return (
     <ClerkProvider appearance={{ baseTheme: dark }}>
       <html lang="en" suppressHydrationWarning>

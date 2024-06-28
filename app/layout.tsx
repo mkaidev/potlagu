@@ -5,15 +5,17 @@ import { dark } from "@clerk/themes";
 import { Toaster } from "sonner";
 
 import "./globals.css";
+
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import { InitialProfile } from "@/lib/InitialProfile";
+import { EdgeStoreProvider } from "@/lib/edgestore";
 
 const font = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Spotlagu App",
-  description: "Emejing lagu app",
+  title: "Spotlagu",
+  description: "Emejing spotlagu app",
   icons: {
     icon: "/favicon.ico",
   },
@@ -36,7 +38,7 @@ export default async function RootLayout({
             disableTransitionOnChange
             storageKey="potLaguTheme"
           >
-            {children}
+            <EdgeStoreProvider>{children}</EdgeStoreProvider>
             <Toaster />
           </ThemeProvider>
         </body>

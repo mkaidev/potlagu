@@ -14,6 +14,34 @@ pnpm dev
 bun dev
 ```
 
+## environments
+
+before start you must add .env file on root project and input your own environment
+
+```js
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_......
+CLERK_SECRET_KEY=sk_test_......
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+
+DATABASE_URL="postgresql://......"
+
+EDGE_STORE_ACCESS_KEY=l2Pl......
+EDGE_STORE_SECRET_KEY=U0Sj......
+
+NEXT_PUBLIC_GENIUS_ACCESS_TOKEN=6ZiF......
+```
+
+If you want to learn how to create it please follow below tutorial👇:
+➡ Tutorial Link 💚: [Build a Full Stack Spotify Clone using Nextjs14 Typescript Tailwindcss Shadcn Prisma Neon Edgestore](https://www.youtube.com/watch?v=j3gRSxB5OVg)
+
+---
+
+## ⭐DO NOT FORGET TO STAR THIS REPO⭐
+
+---
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.

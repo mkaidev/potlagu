@@ -27,7 +27,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   await InitialProfile();
-
   return (
     <ClerkProvider appearance={{ baseTheme: dark }}>
       <html lang="en" suppressHydrationWarning>
@@ -36,7 +35,7 @@ export default async function RootLayout({
             attribute="class"
             forcedTheme="dark"
             disableTransitionOnChange
-            storageKey="potLaguTheme"
+            storageKey="spotifyCloneTheme"
           >
             <EdgeStoreProvider>{children}</EdgeStoreProvider>
             <Toaster />

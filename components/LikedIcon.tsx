@@ -12,7 +12,7 @@ const LikedIcon = ({
     <div
       className={cn(
         "bg-gradient-to-br from-[#4303F5] to-[#BFEAD8] shadow-xl flex items-center justify-center rounded-md",
-        divClassName,
+        divClassName
       )}
     >
       <FaHeart className={cn("text-white", iconClassName)} />

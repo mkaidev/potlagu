@@ -14,7 +14,7 @@ const PlaylistCard = ({ playlist }: { playlist: playlist }) => {
       href={`/playlist/${playlist.id}`}
       className={cn(
         "flex gap-3 hover:bg-neutral-800/65 rounded-md px-2 py-2",
-        params.playlistId === playlist.id && "bg-neutral-800/65",
+        params.playlistId === playlist.id && "bg-neutral-800/65"
       )}
     >
       {playlist.folderId === "Liked Songs" ? (
@@ -39,7 +39,7 @@ const PlaylistCard = ({ playlist }: { playlist: playlist }) => {
       <div className="space-y-1 py-1 hidden md:block">
         <p className="font-semibold">{playlist.name}</p>
         <p className="flex items-center text-neutral-400">
-          {playlist.audio.length} lagu{playlist.audio.length !== 1 && "#"}
+          {playlist.audio.length} song{playlist.audio.length !== 1 && "s"}
         </p>
       </div>
     </Link>

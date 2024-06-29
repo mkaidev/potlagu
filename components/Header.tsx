@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { TbSettingsAutomation } from "react-icons/tb";
 import { useRouter } from "next/navigation";
@@ -9,13 +10,23 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 const Header = ({ className }: { className?: string }) => {
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
   const { user } = useUser();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null; // return this null to avoid hydration errors
+  }
+
   return (
     <header
       className={cn(
         "flex items-center justify-between w-full p-2 sticky top-0 z-30",
-        className,
+        className
       )}
     >
       <div className="items-center space-x-2">
@@ -59,7 +70,7 @@ const Header = ({ className }: { className?: string }) => {
               className="px-2 md:size-full"
             >
               <TbSettingsAutomation className="size-6 md:mr-2" />
-              <p className="hidden md:block">Dapur koleksi</p>
+              <p className="hidden md:block">Author Dashboard</p>
             </Button>
             <UserButton />
           </div>

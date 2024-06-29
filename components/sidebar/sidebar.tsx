@@ -1,12 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { MdLibraryMusic } from "react-icons/md";
-import { HiHome } from "react-icons/hi";
-import { BiSearch } from "react-icons/bi";
 import { useMemo, useTransition } from "react";
 import { usePathname } from "next/navigation";
-import { MdOutlinePlaylistAdd, MdOutlineCreateNewFolder } from "react-icons/md";
+import { HiHome } from "react-icons/hi";
+import { BiSearch } from "react-icons/bi";
+import {
+  MdLibraryMusic,
+  MdOutlinePlaylistAdd,
+  MdOutlineCreateNewFolder,
+} from "react-icons/md";
 import { useUser } from "@clerk/nextjs";
 import { toast } from "sonner";
 import { playlist } from "@prisma/client";
@@ -23,14 +26,14 @@ const Sidebar = ({ playlists }: { playlists: playlist[] }) => {
   const [isPending, startTransition] = useTransition();
 
   const userPlaylists = playlists.filter(
-    (playlist) => playlist.userId === user?.id,
+    (playlist) => playlist.userId === user?.id
   );
 
   const routes = useMemo(
     () => [
       {
         icon: HiHome,
-        label: "Beranda",
+        label: "Home",
         active: pathname === "/",
         href: "/",
       },
@@ -41,7 +44,7 @@ const Sidebar = ({ playlists }: { playlists: playlist[] }) => {
         active: pathname === "/search",
       },
     ],
-    [pathname],
+    [pathname]
   );
 
   const Create = () => {
@@ -50,10 +53,10 @@ const Sidebar = ({ playlists }: { playlists: playlist[] }) => {
     startTransition(async () => {
       await CreatePlaylist(name, "", "")
         .then(() => {
-          toast(`${name} berhasil dibuat`);
+          toast(`${name} created`);
         })
         .catch((error) => {
-          toast("Ada yang salah");
+          toast("Something went wrong");
           console.log(error);
         });
     });
@@ -85,10 +88,10 @@ const Sidebar = ({ playlists }: { playlists: playlist[] }) => {
           <div className="pt-4 space-y-2 md:space-y-4 shadow-md p-2">
             <div className="md:p-4 md:space-y-4 rounded-md md:bg-lightDark flex flex-col items-center justify-center md:block">
               <p className="hidden md:block font-semibold">
-                Buat daftar putar (Playlist)
+                Create your first playlist
               </p>
               <p className="hidden md:block text-xs">
-                Mudah saja, kami akan membantu
+                It&apos;s easy, we&apos;ll help you
               </p>
               <Button
                 className="px-2 md:size-full"
@@ -96,20 +99,20 @@ const Sidebar = ({ playlists }: { playlists: playlist[] }) => {
                 disabled={isPending || !user}
               >
                 <MdOutlinePlaylistAdd className="md:hidden block size-10" />
-                <p className="hidden md:block">Buat playlist</p>
+                <p className="hidden md:block">Create Playlist</p>
               </Button>
             </div>
 
             <div className="md:p-4 md:space-y-4 rounded-md md:bg-lightDark flex flex-col items-center justify-center md:block">
               <p className="hidden md:block font-semibold">
-                Mari temukan beberapa podcast untuk diikuti
+                Let&apos;s find some podcasts to follow
               </p>
               <p className="hidden md:block text-xs">
-                Kami akan terus mengabari tentang episode baru
+                We&apos;ll keep you updated on new episodes
               </p>
               <Button className="px-2 md:size-full">
                 <MdOutlineCreateNewFolder className="md:hidden block size-10" />
-                <p className="hidden md:block">Telusuri podcast</p>
+                <p className="hidden md:block">Browse podcasts</p>
               </Button>
             </div>
           </div>

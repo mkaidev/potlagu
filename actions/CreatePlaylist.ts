@@ -10,7 +10,7 @@ export const CreatePlaylist = async (
   name: string,
   forderId: string,
   imageUrl: string,
-  audio?: string,
+  audio?: string
 ) => {
   const user = await currentUser();
 

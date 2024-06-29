@@ -1,5 +1,5 @@
 {
-  "name": "potlagu",
+  "name": "spotlagu",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -29,6 +29,9 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
+    "framer-motion": "^11.2.12",
+    "genius-lyrics": "^4.4.7",
+    "genius-lyrics-api": "^3.2.1",
     "lucide-react": "^0.397.0",
     "next": "14.2.4",
     "next-themes": "^0.3.0",
@@ -36,10 +39,12 @@
     "react-dom": "^18",
     "react-hook-form": "^7.52.0",
     "react-icons": "^5.2.1",
+    "react-modern-audio-player": "^1.4.0-rc.2",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@types/node": "^20",

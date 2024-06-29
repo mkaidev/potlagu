@@ -25,7 +25,7 @@ const Library = ({
       <div className="sticky top-0 z-30 flex justify-between px-4 pt-4 shadow-md bg-neutral-900 rounded-md">
         <div className="items-center gap-x-2 hidden md:inline-flex text-neutral-400">
           <TbPlaylist size={26} />
-          <p className="font-medium text-base">Rak Lagu</p>
+          <p className="font-medium text-base">Your Library</p>
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger>
@@ -40,11 +40,11 @@ const Library = ({
           <DropdownMenuContent className="w-[280px] dark:bg-[#282828]">
             <DropdownMenuItem onClick={Create}>
               <PiMusicNotesPlusLight className="mr-2 size-6" />
-              Buat Playlist
+              Create Playlist
             </DropdownMenuItem>
             <DropdownMenuItem>
               <MdOutlineFolder className="mr-2 size-6" />
-              Buat Folder
+              Create Folder
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
